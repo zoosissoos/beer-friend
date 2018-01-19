@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Survey</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<style type="text/css">
+
+
+	body{
+		background-color: #E0E0E0;
+	}
+
+	#directions{
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	#submitBut{
+		margin-bottom: 50px;
+	}
+
+	.para{
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+		
+	</style>
+	}
+</head>
+<body>
+	<div class= "container">
+		<div class="row">
+			<h5>Please tell us about yourself.</h5>
+	    	<form class="col s12">
+	    		<div class="row">
+	    			<div class="input-field col s6">
+	    				<input id="name" type="text" class="validate">
+	    				<label for="name">Name</label>
+	        		</div>
+	        		<div class="input-field col s6">
+	          			<input id="photo" type="text" class="validate">
+	          			<label for="photo">Photo</label>
+	        		</div>
+	      		</div>
+	    	</form>
+	  	</div>
+		<hr>
+		<div class = "row" id = "directions">
+			<div class = "directions col s4">
+				<p class ="para">1:Dislike/Disagree</p>
+			</div>
+			<div class = "directions col s4">
+				<p class ="para"> 3:Neutral
+			</div>
+			<div class = "directions col s4">
+				<p class ="para">5:Love/Agree</p>
+			</div> 
+		</div>
+		<hr>
+		<div class="row" id="questions">
+			<!-- questions go here -->
+		</div>
+		<div id="submitBut">
+			<button class="btn waves-effect waves-light center-align light-blue accent-4" type="submit" id="submit" name="action">Submit
+  			</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		let questions = ["Do you like malty beer?","Do you like hoppy beer?","Do you like lower alcoholic beers?","Do you like sour-style beers?","Do you like belgium-style beers?","Do you like lager-style beers?","Do you like stouts?","Do you like porters?","Do you like to go to micro-breweries?","Do you like to trade beers?"];
+
+		for(let i = 0; i< questions.length;i++){
+			let question = questions[i];
+			let div = `<div class = "row">
+							<p>${question}</p>
+							<form action="#">
+								<p class="range-field">
+									<input id="${i}" type="range" min="1" max="5" />
+								</p>
+							</form>	
+						</div>`
+			$('#questions').append(div)
+		}
+
+		$("#submit").on("click", function(e) {
+			e.preventDefault();
+			let qresponse = [];
+			let userName = $("#name").val().trim();
+			let photo = $("#photo").val().trim();
+			for(let j = 0; j <questions.length; j++){
+				let selectDiv = $(`#${1}`).val();
+				qresponse.push(selectDiv);
+			}
+
+			let newUser = {
+				nameUser: userName,
+        		photo: photo,
+        		preferences: qresponse,
+      		};
+
+      		console.log(newUser);
+
+      		// $.post("/api/new", newUser)
+      		// .then(function(data) {
+      		// 	console.log(data);
+      		// 	alert("Adding character...");
+      		// });  
+		});
+	});
+
+</script>
+</html>

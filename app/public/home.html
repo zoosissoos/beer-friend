@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Beer Friend</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Gudea:400,700|Rancho" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<style type="text/css">
+		
+		h2 {
+			font-family: 'Rancho', cursive;
+		}
+
+		h5 {
+			font-family: 'Gudea', sans-serif;
+			font-weight: bold;
+		}
+
+		#top { 
+			opacity: 0.85 !important;
+      		z-index:  50;
+      		margin-top:  100px;
+		}
+
+    	#titlebox {
+    		margin: 0 auto;
+    		width: 60%;
+      		padding: 20px;
+     	    border-radius: 75px 75px 75px 75px;
+    	}
+
+		#begin {
+			z-index: 50;
+			margin: 0px auto;
+      		margin-top: 50px;
+      		border-radius: 150px 150px 150px 150px;
+		}
+
+    	#back {
+      		z-index: 0;
+    	}
+
+    	#high{
+    		height: 60%;
+    	}
+
+    	nav{
+    		z-index: 500;
+    		margin-bottom: 0;
+    	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="slider fullscreen" id="back">
+	    	<ul class="slides">
+	    		<li>
+	    			<img src="../public/assets/images/background1.jpg"> 
+	    		</li>
+	    		<li>
+	        		<img src="../public/assets/images/background2.jpg"> 
+	      		</li>
+	      		<li>
+	        		<img src="../public/assets/images/background3.jpg"> 
+	      		</li>
+	       		<li>
+	        		<img src="../public/assets/images/background4.jpg"> 
+	      		</li>
+	      		<li>
+	        		<img src="../public/assets/images/background5.jpg"> 
+	      		</li>   
+	    	</ul>
+	    	<footer>
+				<nav>
+					<div class="nav-wrapper light-blue darken-4">
+		    			<ul id="nav-mobile" class="right hide-on-med-and-down">
+		        			<li><a href="/api/users">API Friends</a></li>
+		        			<li><a href="https://github.com/zoosissoos/beer-friend">Github Repo</a></li>
+		      			</ul>
+		  			</div>
+	  			</nav>	
+			</footer>
+		</div>
+	    <div class = "row" id="top"> 
+	      	<div class="center-align  light-blue darken-4" id="titlebox">
+	        	<h2 class="white-text">Beer Friend</h2">
+	        	<h5 class="yellow-text">Find those who share your taste.</h5>
+	    	</div>
+	    </div>
+	   	<div class="row" id="buttons high">
+	   		<div class="col s12 m12 l12 valign-wrapper">
+				<a href="./survey.html" class="waves-effect waves-light btn-large center-align light-blue accent-4" id="begin">Lets get started.</a> 
+    		</div>
+		</div>
+	</div>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('.slider').slider({
+			indicators: false,
+			interval: 10000,
+	 	});
+	});
+
+</script>
+</body>
+</html>
