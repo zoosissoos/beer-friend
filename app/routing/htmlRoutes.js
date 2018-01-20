@@ -1,18 +1,18 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const path = require("path");
-const apidata = require("apiRoutes.js";)
+const path = require('path');
 
-const app = express();
-let PORT = process.env.PORT || 3000;
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+function htmlRoutesList(app){
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/home.html"));
-});
+	//sets rout for the survey
+	app.get("/survey", function(req, res) {
+		res.sendFile(path.join(__dirname, "../public/survey.html"));
+	});
 
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
+	//sets route for home as a catch-all
+	app.get("/:home?", function(req, res) {
+		res.sendFile(path.join(__dirname, "../public/home.html"));
+	});
+
+};
+
+module.exports = htmlRoutesList;

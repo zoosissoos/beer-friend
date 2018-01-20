@@ -26,11 +26,28 @@
 		margin-bottom: 0;
 		margin-top: 0;
 	}
+
+	#friendinfo{
+		text-align: center;
+	}
+
+	#friendimage{
+		height: 25%;
+		width: 25%;
+	}
 		
 	</style>
-	}
 </head>
 <body>
+	<nav>
+    	<div class="nav-wrapper light-blue darken-4">
+    		<a href="/" class="brand-logo">Beer Friend</a>
+    		<ul id="nav-mobile" class="right hide-on-med-and-down">
+    			<li><a href="/api/users">API Friends</a></li>
+    			<li><a href="https://github.com/zoosissoos/beer-friend">Github Repo</a></li>
+    		</ul>
+    	</div>
+  </nav>
 	<div class= "container">
 		<div class="row">
 			<h5>Please tell us about yourself.</h5>
@@ -64,14 +81,26 @@
 			<!-- questions go here -->
 		</div>
 		<div id="submitBut">
-			<button class="btn waves-effect waves-light center-align light-blue accent-4" type="submit" id="submit" name="action">Submit
+			<button class="btn waves-effect waves-light center-align light-blue accent-4 modal-trigger" type="submit" id="submit" name="action">Submit
   			</button>
+		</div>
+		<div id="friendpop" class="modal">
+  			<div class="modal-content">
+  				<div id="friendinfo">
+  					<!-- friend info shows here -->
+  				</div>
+  			</div>
+  			<div class="modal-footer">
+  				<a href="#!" id="close" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+  			</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
 
 	$(document).ready(function(){
+
+		$('#friendpop').modal(); 
 
 		let questions = ["Do you like malty beer?","Do you like hoppy beer?","Do you like lower alcoholic beers?","Do you like sour-style beers?","Do you like belgium-style beers?","Do you like lager-style beers?","Do you like stouts?","Do you like porters?","Do you like to go to micro-breweries?","Do you like to trade beers?"];
 
@@ -104,14 +133,28 @@
         		preferences: qresponse,
       		};
 
-      		console.log(newUser);
-
-      		// $.post("/api/new", newUser)
-      		// .then(function(data) {
-      		// 	console.log(data);
-      		// 	alert("Adding character...");
-      		// });  
+      		$.post("/api/new", newUser)
+      		.then(function(res) {
+      			console.log(res);
+      			let matchName = res.nameUser;
+      			let matchPhoto = res.photo;
+      			console.log(matchName);
+      			console.log(matchPhoto);
+      			let html = `<h3>We found a friend!</h3>
+      						<img id = "friendimage" alt= "friendpic" src="${matchPhoto}">
+  							<h5>${matchName}</h5>
+  							<p>This person in our database shares similar tastes</p>`
+      			$('#friendinfo').append(html);
+      			$('#friendpop').modal('open');
+      		});  
 		});
+
+		//emptys modal data after closing
+		$("#close").on("click", function(e) {
+			e.preventDefault();
+			$('#friendinfo').empty();
+		});
+
 	});
 
 </script>

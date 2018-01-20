@@ -1,33 +1,68 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const path = require("path");
+const path = require('path');
+const users = require('../data/friend');
 
-const app = express();
-let PORT = process.env.PORT || 3000;
+function apiRoutesList(app){
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+	///api resquest for data
+	app.get("/api/:users?", function(req, res){
+		res.json(users);;
+	});
 
-let users = [];
+	//adding new user
+	app.post("/api/new", function(req, res) {
+		let user = req.body;
+		let newUser = {
+			nameUser: user.nameUser,
+			photo: user.photo,
+      preferences: user.preferences
+    };
 
-app.get("/api/:users?", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/home.html"));
-});
+    //shows new user
+    console.log(newUser);
 
-app.post("/api/new", function(req, res) {
+		let newUserPref = newUser.preferences;
 
-  let user = req.body;
+		let comp = [];
 
-  console.log(user);
+		//compares tastes against other users
+		for(let k = 0;k <users.length; k++){
+			let comppreferences = users[k].preferences;
+			let calcDiff =[];
+			for(let m=0; m < comppreferences.length; m++){
+				calcDiff.push([parseInt(newUserPref[m]),comppreferences[m]]);
+				calcDiff[m].sort(function(a, b) {
+					return b - a;
+				});
+				calcDiff[m] = calcDiff[m].reduce(function(a,b){
+					return (parseInt(a)-parseInt(b)); 
+				});
+			}
+			calcDiff = calcDiff.reduce(function(a,b){
+					return (parseInt(a) + parseInt(b)); 
+				});
+			console.log(calcDiff);
+			comp.push(calcDiff);
+		};
 
-  users.push(user);
+		//returns friend that matches with tastes
+		let friendIndex = indexOfSmallest(comp);
+		let friend = users[friendIndex];
+		console.log(friend)
 
-  res.json(user);
-});
+		//sends friend to client
+		res.json(friend);
+
+		//adds new user to data
+		users.push(newUser);
+
+	});
+
+	//helper function to find index of smallest number in array
+	function indexOfSmallest(a) {
+	 return a.indexOf(Math.min.apply(Math, a));
+	};
+
+};
 
 
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
-
-module.exports = users;
+module.exports = apiRoutesList;
