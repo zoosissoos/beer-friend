@@ -16,14 +16,20 @@ Technologies I used include:
 
 ---
 ![](.\app\public\assets\images\ReadMeCap.PNG)
+[[https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap.PNG]]
 
 Splash Page
 
 ![](.\app\public\assets\images\ReadMeCap2.PNG)
 
+[[https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap2.PNG]]
+
 Survey
 
-![](.\app\public\assets\images\ReadMeCap2.PNG)
+![](.\app\public\assets\images\ReadMeCap3.PNG)
+[[https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap3.PNG]]
+
+
 
 Submit Buttom
 
