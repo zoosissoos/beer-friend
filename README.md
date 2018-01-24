@@ -3,9 +3,38 @@
 
 This app was made to help users find those with similar beer tastes.
 
-I used HTML, CSS, Javascript, node, express as well as a body-parser to complete this project.
+---
 
-Although this is just for basic functionality, I plan on adding more featers such as contact information like a like to a facebook page.
+Technologies I used include:
 
+* HTML
+* CSS
+* Materialize
+* Javascript
+* Node.js
+* Express
+
+---
+![](.\app\public\assets\images\ReadMeCap.PNG)
+
+Splash Page
+
+![](.\app\public\assets\images\ReadMeCap2.PNG)
+
+Survey
+
+![](.\app\public\assets\images\ReadMeCap2.PNG)
+
+Submit Buttom
+
+---
+Future Developments: 
+
+Although this is just for basic functionality, I plan on adding more featers such as contact information for a matching friend.
+
+This would be incoroprating a database instead of a dummy page with user objects.
+
+
+---
 
 Enjoy!
