@@ -13,6 +13,9 @@ This app was made to help users find those with similar beer tastes.
 * Node.js
 * Express
 
+### Installation
+
+-Clone then run 'npm install' once in the directory. Then run 'node server.js' to run locally.
 ---
 ![](.\app\public\assets\images\ReadMeCap.PNG)
 [[https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap.PNG]]
@@ -42,7 +45,7 @@ In the future this would use database instead of a dummy page with user objects.
 
 ## Deployment
 
-This has been deployed via [GitHub Pages](https://zoosissoos.github.io/beer-friend/).
+This has been deployed via [Heroku](https://calm-dusk-49591.herokuapp.com/).
 
 ## Authors
 
