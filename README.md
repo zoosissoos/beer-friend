@@ -3,9 +3,8 @@
 
 This app was made to help users find those with similar beer tastes.
 
----
 
-Technologies I used include:
+### Prerequisites/Technologies Used
 
 * HTML
 * CSS
@@ -33,14 +32,20 @@ Survey
 
 Submit Buttom
 
----
-Future Developments: 
+
+## Future Developments: 
 
 Although this is just for basic functionality, I plan on adding more featers such as contact information for a matching friend.
 
-This would be incoroprating a database instead of a dummy page with user objects.
+In the future this would use database instead of a dummy page with user objects.
 
 
----
+## Deployment
+
+This has been deployed via [GitHub Pages](https://zoosissoos.github.io/beer-friend/).
+
+## Authors
+
+* **Daniel Lewis** - *Initial work* - [zoosissoos](https://github.com/zoosissoos)
 
 Enjoy!

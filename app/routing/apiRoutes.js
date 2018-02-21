@@ -3,7 +3,7 @@ const users = require('../data/friend');
 
 function apiRoutesList(app){
 
-	///api resquest for data
+	///api request for data
 	app.get("/api/:users?", function(req, res){
 		res.json(users);;
 	});
