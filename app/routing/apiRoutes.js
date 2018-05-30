@@ -54,7 +54,6 @@ function apiRoutesList(app){
 
 		//adds new user to data
 		users.push(newUser);
-
 	});
 
 	//helper function to find index of smallest number in array

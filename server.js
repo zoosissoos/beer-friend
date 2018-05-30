@@ -19,7 +19,7 @@ app.use('/static', express.static(path.join(__dirname,'app/public')));
 apiRoutes(app);
 htmlRoutes(app);
 
-//lets user know server is listening
+//lets user know what port server is listening to
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });

@@ -1,10 +1,8 @@
 # beer-friend
 
+This app was created as a project to demonstrate understanding of API calls. It is a mock app where users can fill out a survey and be matched with a friend that shares similar beer tastes.
 
-This app was made to help users find those with similar beer tastes.
-
-
-### Prerequisites/Technologies Used
+## Prerequisites/Technologies Used
 
 * HTML
 * CSS
@@ -13,34 +11,34 @@ This app was made to help users find those with similar beer tastes.
 * Node.js
 * Express
 
-### Installation
+## Installation
 
--Clone then run 'npm install' once in the directory. Then run 'node server.js' to run locally.
+- Clone onto local machine
+- In the terminal, once in the directory, Run 'npm install'. 
+- Run 'node server.js' to run the server locally.
 ---
-![](.\app\public\assets\images\ReadMeCap.PNG)
-[[https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap.PNG]]
+![Splash Page](https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap.PNG)
 
-Splash Page
+- Splash Page
 
-![](.\app\public\assets\images\ReadMeCap2.PNG)
+![Survey](https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap2.PNG)
 
-[[https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap2.PNG]]
-
-Survey
-
-![](.\app\public\assets\images\ReadMeCap3.PNG)
-[[https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap3.PNG]]
+- Survey
 
 
+![Submit Button](https://github.com/zoosissoos/beer-friend/raw/master/app/public/assets/images/ReadMeCap3.PNG)
 
-Submit Buttom
+- Submit Button
+
+
+
 
 
 ## Future Developments: 
 
-Although this is just for basic functionality, I plan on adding more featers such as contact information for a matching friend.
+Although this is just for basic functionality to demonstrate understanding of APIs, I plan on adding more features such as contact information for a matching friend.
 
-In the future this would use database instead of a dummy page with user objects.
+This would also integrate a user database instead of a mock user file.
 
 
 ## Deployment
